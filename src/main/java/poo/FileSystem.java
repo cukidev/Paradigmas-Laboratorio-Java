@@ -26,6 +26,7 @@ public class FileSystem {
     private final List<Drive> drives; // Lista de Drives
     private final Set<User> users; // Conjunto de usuarios
     private User currentUser = null; // Usuario que está conectado actualmente
+    private Drive currentDrive = null; // Drive que se está trabajando
 
     /*
     =====================
@@ -35,6 +36,7 @@ public class FileSystem {
 
     /**
      * Crea un nuevo sistema de archivos
+     *
      * @param name nombre del sistema de archivos
      */
     // RF3: constructor
@@ -53,6 +55,7 @@ public class FileSystem {
 
     /**
      * Obtiene el nombre del sistema de archivos
+     *
      * @return String con el nombre del sistema
      */
     public String getName() {
@@ -61,6 +64,7 @@ public class FileSystem {
 
     /**
      * Obtiene la fecha de creación del sistema de archivos
+     *
      * @return LocalDate con la fecha de creación
      */
     public LocalDate getCreationDate() {
@@ -69,6 +73,7 @@ public class FileSystem {
 
     /**
      * Obtiene una lista de los Drives en el sistema de archivos
+     *
      * @return Lista de objetos Drives
      */
     public List<Drive> getDrives() {
@@ -78,19 +83,48 @@ public class FileSystem {
 
     /**
      * Obtiene un conjunto de los usuarios en el sistema de archivos
+     *
      * @return Conjunto de objetos User
      */
-    public Set<User> getUsers(){
+    public Set<User> getUsers() {
         return users;
     }
 
     /**
      * Obtiene el usuario actualmente conectado en el sistema de archivos
+     *
      * @return Objeto User que está conectado
      */
-    public User getCurrentUser(){
+    public User getCurrentUser() {
         return currentUser;
     }
+
+    /**
+     * Obtiene la letra del drive en el sistema de archivos
+     *
+     * @param letter letra del drive
+     * @return la letra actual del drive
+     */
+    private Drive getDriveLetter(char letter) {
+        String letterAsString = String.valueOf(letter);
+        for (Drive drive : drives) {
+            if (drive.getLetter().equalsIgnoreCase(letterAsString)) {
+                return drive;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Obtiene el drive actual en el sistema de archvos
+     * @return drive actual
+     */
+    public Drive getCurrentDrive() {
+        return currentDrive;
+    }
+
+
+
 
     /*
     ====================
@@ -100,10 +134,11 @@ public class FileSystem {
 
     /**
      * Verifica si una letra del drive ya existe en el sistema de archivos
+     *
      * @param letter letra del drive
      * @return bool, true si la letra existe, false si no
      */
-    private boolean driveLetterExist(String letter){
+    private boolean driveLetterExist(String letter) {
         return this.drives.stream().anyMatch(d -> d.getLetter().equals(letter));
     }
     /*
@@ -134,19 +169,20 @@ public class FileSystem {
 
     /**
      * Añade un nuevo disco al sistema de archivos
-     * @param letter letra del drive
-     * @param name nombre del disco
+     *
+     * @param letter   letra del drive
+     * @param name     nombre del disco
      * @param capacity capacidad del disco
      */
     // RF4: addDrive
-    public void addDrive(String letter, String name, int capacity){
+    public void addDrive(String letter, String name, int capacity) {
         letter = letter.toUpperCase();
         /*
         Hace que no sea sensible entre carácteres, por ejemplo noté que si agregaba una unidad "C", y luego otra "c",
         me las tomaba como unidades distintas, por lo cual el UpperCase lo soluciona.
         */
-        if (!driveLetterExist(letter)){
-            Drive drive  = new Drive(letter, name, capacity);
+        if (!driveLetterExist(letter)) {
+            Drive drive = new Drive(letter, name, capacity);
             this.drives.add(drive);
             System.out.println("Unidad '" + letter + "' añadida con éxito.");
         } else {
@@ -157,14 +193,15 @@ public class FileSystem {
 
     /**
      * Registra en el sistema un nuevo usuario
+     *
      * @param userName nombre del usuario nuevo
      */
     // RF5: register
-    public void register(String userName){
+    public void register(String userName) {
         User user = new User(userName);
-        if (users.contains(user)){
+        if (users.contains(user)) {
             System.out.println("El nombre de usuario ya está en uso.");
-        }else{
+        } else {
             users.add(user);
             System.out.println("Usuario '" + userName + "' añadido con éxito.");
         }
@@ -172,6 +209,7 @@ public class FileSystem {
 
     /**
      * Permite logear a un usuario ya creado en el sistema
+     *
      * @param userName nombre del usuario que iniciará sesión
      */
     // RF6: login
@@ -203,4 +241,25 @@ public class FileSystem {
         currentUser = null;
         System.out.println("¡Se ha cerrado la sesión correctamente!");
     }
+
+    /**
+     * Permite fijar la unidad en la que el usuario realizará acciones.
+     *
+     * @param letter , letra en donde se trabajará.
+     */
+    // RF8: switchDrive
+    public void switchDrive(char letter) {
+        if (currentUser == null) {
+            System.out.println("Debes iniciar sesión antes de seleccionar la unidad.");
+            return;
+        }
+        Drive drive = getDriveLetter(letter);
+        if (drive == null) {
+            System.out.println("La unidad " + letter + " no existe.");
+        } else {
+            currentDrive = drive;
+            System.out.println("Ahora estás trabajando en la unidad " + letter + ".");
+        }
+    }
+
 }

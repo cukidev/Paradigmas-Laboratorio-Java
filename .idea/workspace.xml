@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d869d714-de59-4900-80a2-14ff73c02d2b" name="Changes" comment="Creación de Drive y de la RF4.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/poo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/poo/Folder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/poo/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Drive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/poo/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/FileSystem.java" afterDir="false" />
@@ -51,6 +51,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;discord-project&quot;
   }
 }</component>
@@ -127,7 +128,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -139,7 +152,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Creación de Drive y de la RF4." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/LAB3$Main.ic" NAME="Main Coverage Results" MODIFIED="1687131269316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/LAB3$Main.ic" NAME="Main Coverage Results" MODIFIED="1687316504179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>poo.*</FILTER>
     </SUITE>
   </component>

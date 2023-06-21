@@ -10,14 +10,15 @@ public class Main {
             System.out.println("=============================================== ");
             System.out.println("### Manipulador de Sistema de Archivos ###");
             System.out.println("Escoja su opción:");
-            System.out.println("1. Crear un Sistema de Archivos");
-            System.out.println("2. Añadir una Unidad al Sistema de Archivos");
-            System.out.println("3. Visualizar Sistema de Archivos");
-            System.out.println("4. Visualizar usuarios registrados");
-            System.out.println("5. Registrar un nuevo usuario");
-            System.out.println("6. Iniciar sesión");
-            System.out.println("7. Cerrar sesión");
-            System.out.println("8. Salir");
+            System.out.println("1. Crear un Sistema de Archivos.");
+            System.out.println("2. Añadir una Unidad al Sistema de Archivos.");
+            System.out.println("3. Visualizar Sistema de Archivos.");
+            System.out.println("4. Visualizar usuarios registrados.");
+            System.out.println("5. Registrar un nuevo usuario.");
+            System.out.println("6. Iniciar sesión.");
+            System.out.println("7. Cerrar sesión.");
+            System.out.println("8. Seleccionar unidad de trabajo.");
+            System.out.println("9. Salir.");
             System.out.println("=============================================== ");
             System.out.print("INTRODUZCA SU OPCIÓN: ");
             int option = scanner.nextInt();
@@ -94,8 +95,15 @@ public class Main {
                         System.out.println("Primero debe crear un sistema de archivos.");
                     }
                     break;
-                // Salir
+                // Switch Drive
                 case 8:
+                    System.out.print("Introduzca la letra de la unidad de disco en la cual desea trabajar: ");
+                    char driveLetter = scanner.nextLine().charAt(0);
+                    assert fileSystem != null;
+                    fileSystem.switchDrive(driveLetter);
+                    break;
+                // Salir
+                case 9:
                     System.out.println("Saliendo...");
                     scanner.close();
                     return;

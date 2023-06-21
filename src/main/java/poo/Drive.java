@@ -1,5 +1,8 @@
 package poo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Clase que simula una Unidad de Disco dentro de un Sistema de archivos
  * @author Paloma Zepeda Garrido
@@ -13,6 +16,7 @@ public class Drive {
     private final String letter;
     private final String name;
     private final int capacity;
+    private List<Folder> folders;
 
     /*
     =====================
@@ -30,6 +34,7 @@ public class Drive {
         this.letter = letter;
         this.name = name;
         this.capacity = capacity;
+        this.folders = new ArrayList<>();
     }
 
     /*
@@ -60,5 +65,13 @@ public class Drive {
      */
     public int getCapacity() {
         return capacity;
+    }
+
+    /**
+     * Método que devuelve las carpetas dentro de un disco
+     * @return carpetas
+     */
+    public List<Folder> getFolders(){
+        return folders;
     }
 }
