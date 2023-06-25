@@ -1,15 +1,18 @@
 package poo;
 
+
 /*
 ==============
 = BIBLIOTECA =
 ==============
 */
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 
 /**
  * Clase que simula el Sistema de archivos
@@ -26,7 +29,6 @@ public class FileSystem {
     private final List<Drive> drives; // Lista de Drives
     private final Set<User> users; // Conjunto de usuarios
     private User currentUser = null; // Usuario que está conectado actualmente
-    private Drive currentDrive = null; // Drive que se está trabajando
 
     /*
     =====================
@@ -80,51 +82,6 @@ public class FileSystem {
         // retorna una copia de los drives actuales
         return new ArrayList<>(this.drives);
     }
-
-    /**
-     * Obtiene un conjunto de los usuarios en el sistema de archivos
-     *
-     * @return Conjunto de objetos User
-     */
-    public Set<User> getUsers() {
-        return users;
-    }
-
-    /**
-     * Obtiene el usuario actualmente conectado en el sistema de archivos
-     *
-     * @return Objeto User que está conectado
-     */
-    public User getCurrentUser() {
-        return currentUser;
-    }
-
-    /**
-     * Obtiene la letra del drive en el sistema de archivos
-     *
-     * @param letter letra del drive
-     * @return la letra actual del drive
-     */
-    private Drive getDriveLetter(char letter) {
-        String letterAsString = String.valueOf(letter);
-        for (Drive drive : drives) {
-            if (drive.getLetter().equalsIgnoreCase(letterAsString)) {
-                return drive;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Obtiene el drive actual en el sistema de archvos
-     * @return drive actual
-     */
-    public Drive getCurrentDrive() {
-        return currentDrive;
-    }
-
-
-
 
     /*
     ====================
@@ -201,9 +158,11 @@ public class FileSystem {
         User user = new User(userName);
         if (users.contains(user)) {
             System.out.println("El nombre de usuario ya está en uso.");
+            //JOptionPane.showMessageDialog(null, "El nombre de usuario ya esta en uso.");
         } else {
             users.add(user);
-            System.out.println("Usuario '" + userName + "' añadido con éxito.");
+            System.out.println("Usuario " + userName + "anadido con exito.");
+            //JOptionPane.showMessageDialog(null, "Usuario " + userName + "anadido con exito.");
         }
     }
 
@@ -248,18 +207,24 @@ public class FileSystem {
      * @param letter , letra en donde se trabajará.
      */
     // RF8: switchDrive
-    public void switchDrive(char letter) {
+    public void switchDrive(String letter) {
         if (currentUser == null) {
-            System.out.println("Debes iniciar sesión antes de seleccionar la unidad.");
+            System.out.println("No hay un usuario conectado. Inicia sesión para cambiar de unidad." + letter);
+            //JOptionPane.showMessageDialog(null, "No hay un usuario conectado. Inicia sesión para cambiar de unidad.");
             return;
         }
-        Drive drive = getDriveLetter(letter);
-        if (drive == null) {
-            System.out.println("La unidad " + letter + " no existe.");
-        } else {
-            currentDrive = drive;
-            System.out.println("Ahora estás trabajando en la unidad " + letter + ".");
+
+        for (Drive drive : drives) {
+            if (drive.getLetter().equalsIgnoreCase(letter)) {
+                // Drive que se está trabajando
+                System.out.println("Cambio de unidad exitoso a: " + letter);
+                return;
+            }
         }
+        System.out.println("Unidad no encontrada.");
     }
+
+    // RF9: mkdir
+
 
 }

@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d869d714-de59-4900-80a2-14ff73c02d2b" name="Changes" comment="Creación de Drive y de la RF4.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/poo/Folder.java" afterDir="false" />
+    <list default="true" id="d869d714-de59-4900-80a2-14ff73c02d2b" name="Changes" comment="Creación de la clase Folder y de la RF8.">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/poo/Interfaz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/poo/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/poo/MenuTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poo/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Drive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/poo/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/FileSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/poo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Main.java" afterDir="false" />
     </list>
@@ -27,7 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -37,6 +43,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2RMM3FntKGlCfUdxBlnT3giISYt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -45,23 +54,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-project&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "full.screen.before.presentation.mode": "false",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="poo" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="poo" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="poo.Main" />
       <module name="LAB3.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="poo.*" />
+          <option name="PATTERN" value="poo.Drive" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,7 +115,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.LAB3 [test]" />
       </list>
     </recent_temporary>
@@ -120,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687129060993</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Creación de la clase Folder y de la RF8.">
+      <created>1687319562869</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687319562869</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,7 +178,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creación de FileSystem y el RF3." />
     <MESSAGE value="Creación de Drive y de la RF4." />
-    <option name="LAST_COMMIT_MESSAGE" value="Creación de Drive y de la RF4." />
+    <MESSAGE value="Creación de la clase Folder y de la RF8." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creación de la clase Folder y de la RF8." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LAB3$Main.ic" NAME="Main Coverage Results" MODIFIED="1687316504179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
