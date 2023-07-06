@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d869d714-de59-4900-80a2-14ff73c02d2b" name="Changes" comment="Creación de la clase Folder y de la RF8.">
+    <list default="true" id="d869d714-de59-4900-80a2-14ff73c02d2b" name="Changes" comment="Modificación del RF8, creación de la clase Menú, y de un Menú con interfaz (Interfaz.java) que por el momento permanecerá comentada puesto que se implementará terminados los RF por comodidad de la creadora.">
       <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/poo/Interfaz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/poo/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/poo/MenuTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/poo/System.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poo/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Drive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/poo/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/FileSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poo/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Folder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/poo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,14 +29,23 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/poo/Drive.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poo/Folder.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poo/Interfaz.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poo/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poo/Menu.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poo/System.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poo/User.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -54,19 +61,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "full.screen.before.presentation.mode": "false",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "File.Encoding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/palom/OneDrive/Escritorio/19.973.961-1_Lab3-main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -149,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687319562869</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modificación del RF8, creación de la clase Menú, y de un Menú con interfaz (Interfaz.java) que por el momento permanecerá comentada puesto que se implementará terminados los RF por comodidad de la creadora.">
+      <created>1687736577676</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687736577676</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,7 +194,8 @@
     <MESSAGE value="Creación de FileSystem y el RF3." />
     <MESSAGE value="Creación de Drive y de la RF4." />
     <MESSAGE value="Creación de la clase Folder y de la RF8." />
-    <option name="LAST_COMMIT_MESSAGE" value="Creación de la clase Folder y de la RF8." />
+    <MESSAGE value="Modificación del RF8, creación de la clase Menú, y de un Menú con interfaz (Interfaz.java) que por el momento permanecerá comentada puesto que se implementará terminados los RF por comodidad de la creadora." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificación del RF8, creación de la clase Menú, y de un Menú con interfaz (Interfaz.java) que por el momento permanecerá comentada puesto que se implementará terminados los RF por comodidad de la creadora." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LAB3$Main.ic" NAME="Main Coverage Results" MODIFIED="1687316504179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

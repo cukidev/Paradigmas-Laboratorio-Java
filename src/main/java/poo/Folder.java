@@ -12,6 +12,7 @@ public class Folder {
     =============
     */
 
+    private String name;
     private String createdBy;
     private LocalDateTime creationDate;
     private LocalDateTime lastModified;
@@ -25,6 +26,7 @@ public class Folder {
     */
 
     public Folder(String name, User createdBy) {
+        this.name = name;
         this.createdBy = String.valueOf(createdBy);
         this.creationDate = LocalDateTime.now();
         this.lastModified = LocalDateTime.now();

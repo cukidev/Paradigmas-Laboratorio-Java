@@ -16,7 +16,7 @@ public class Drive {
     private final String letter;
     private final String name;
     private final int capacity;
-    private List<Folder> folders;
+    private List<Folder> folders = new ArrayList<>();
 
     /*
     =====================
@@ -67,11 +67,13 @@ public class Drive {
         return capacity;
     }
 
-    /**
-     * Método que devuelve las carpetas dentro de un disco
-     * @return carpetas
-     */
-    public List<Folder> getFolders(){
+    public void addFolder(Folder folder) {
+        this.folders.add(folder);
+    }
+
+    public List<Folder> getFolders() {
         return folders;
     }
+
+
 }
