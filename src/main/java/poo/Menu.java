@@ -200,6 +200,9 @@ public class Menu {
                 fileSystem.mkdir(folderName);
                 break;
             case 2:
+                java.lang.System.out.print("Introduzca la ruta a la que desea cambiar: ");
+                String path = scanner.nextLine();
+                fileSystem.cd(path);
                 break;
 
             default:

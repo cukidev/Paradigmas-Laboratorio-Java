@@ -30,6 +30,8 @@ public class System implements FileSystem {
     private final Set<User> users; // Conjunto de usuarios
     private User currentUser = null; // Usuario que está conectado actualmente
     private Drive activeDrive;
+    private Directory root;
+    private Directory currentDirectory;
 
     /*
     =====================
@@ -48,6 +50,8 @@ public class System implements FileSystem {
         this.creationDate = LocalDate.now(); // fecha de creación
         this.drives = new ArrayList<>(); // drives
         this.users = new HashSet<>(); //usuarios
+        this.root = new Directory(null, "/");
+        this.currentDirectory = root;
     }
 
     /*
@@ -243,6 +247,25 @@ public class System implements FileSystem {
         Folder newFolder = new Folder(folderName, currentUser);
         activeDrive.addFolder(newFolder);
         java.lang.System.out.println("Directorio " + folderName + " creado con éxito.");
+    }
+
+    public void cd(String path) {
+        if (path.equals("/")) {
+            this.currentDirectory = root;
+        } else if (path.equals("..")) {
+            if (this.currentDirectory.getParent() != null) {
+                this.currentDirectory = this.currentDirectory.getParent();
+            }
+        } else if (!path.contains("/")) {
+            Directory nextDir = this.currentDirectory.getSubdirectory(path);
+            if (nextDir != null) {
+                this.currentDirectory = nextDir;
+            } else {
+                java.lang.System.out.println("The directory doesn't exist");
+            }
+        } else {
+            java.lang.System.out.println("The path is not supported");
+        }
     }
 
 

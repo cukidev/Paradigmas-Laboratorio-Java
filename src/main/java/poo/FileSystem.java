@@ -7,5 +7,6 @@ public interface FileSystem {
     void logout();
     void switchDrive(String letter);
     void mkdir(String folderName);
+    void cd(String path);
 
 }
