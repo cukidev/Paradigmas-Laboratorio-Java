@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Menu {
     private System fileSystem;
     private final Scanner scanner;
+    private User currentUser;
 
     public Menu() {
         this.scanner = new Scanner(java.lang.System.in);
@@ -187,23 +188,36 @@ public class Menu {
 
     private void displayDirectoryMenu(){
         java.lang.System.out.println("\n");
-        java.lang.System.out.println("#### Gestor de Usuarios ####");
-        java.lang.System.out.println("1. MkDir");
-        java.lang.System.out.println("2. Volver al menú principal");
+        java.lang.System.out.println("#### Gestor de Directorios ####");
+        java.lang.System.out.println("1. Crear Directorio");
+        java.lang.System.out.println("2. Cambiar Directorio");
+        java.lang.System.out.println("3. Añadir archivo");
+        java.lang.System.out.println("4. Volver al menú principal");
         int option = scanner.nextInt();
         scanner.nextLine();
 
         switch (option) {
-            case 1:
+            case 1: // Crear Directorio
                 java.lang.System.out.print("Introduzca el nombre del directorio que desea crear: ");
                 String folderName = scanner.nextLine();
                 fileSystem.mkdir(folderName);
                 break;
-            case 2:
+            case 2: // Cambiar Directorio
                 java.lang.System.out.print("Introduzca la ruta a la que desea cambiar: ");
                 String path = scanner.nextLine();
                 fileSystem.cd(path);
                 break;
+            case 3: // Añadir archivo
+                java.lang.System.out.print("Ingrese el nombre del archivo: ");
+                String fileName = scanner.nextLine();
+                java.lang.System.out.print("Ingrese el contenido del archivo: ");
+                String content = scanner.nextLine();
+                // Crear un objeto File con los datos ingresados
+                File newFile = new File(fileName, currentUser, "", content);
+                // Agregar el archivo al sistema
+                fileSystem.addFile(newFile);
+                break;
+
 
             default:
                 java.lang.System.out.println("Opción no válida. Por favor, escoja una opción entre 1 y .");

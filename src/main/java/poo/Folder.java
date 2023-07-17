@@ -34,5 +34,23 @@ public class Folder {
         this.files = new ArrayList<>();
     }
 
+    public File getFileByName(String fileName) {
+        for (File file : files) {
+            if (file.getName().equals(fileName)) {
+                return file;
+            }
+        }
+        for (Folder subFolder : subFolders) {
+            File file = subFolder.getFileByName(fileName);
+            if (file != null) {
+                return file;
+            }
+        }
+        return null;
+    }
 
+
+    public void addFile(poo.File newFile) {
+
+    }
 }

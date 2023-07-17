@@ -3,77 +3,72 @@ package poo;
 import java.time.LocalDateTime;
 
 public class File {
-    private String name;
+    private String fileName;
     private User createdBy;
     private LocalDateTime creationDate;
     private LocalDateTime lastModifiedDate;
     private String securityAttributes;
     private int size; // Tamaño del archivo en bytes
-    private String extension; // Extensión del archivo
+    private String fileType; // Extensión del archivo
+    private String content;
 
-    public File(String name, User createdBy, String securityAttributes) {
-        this.name = name;
+    public File(String fileName, User createdBy, String securityAttributes, String content) {
+        this.fileName = fileName;
         this.createdBy = createdBy;
         this.creationDate = LocalDateTime.now();
         this.lastModifiedDate = LocalDateTime.now();
         this.securityAttributes = securityAttributes;
-        this.extension = extension;
+        this.fileType = fileType;
         this.size = 0;
+        this.content = content;
+
     }
 
-    // Getters y setters
-    public String getName() {
-        return name;
+    public String getFileName() {
+        return fileName;
     }
+
+    public String getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+        this.size = content.length();
+        this.lastModifiedDate = LocalDateTime.now();
+    }
+
+    // Método auxiliar para determinar el tipo de archivo a partir de la extensión
+    private String determineFileType(String fileName) {
+        int dotIndex = fileName.lastIndexOf('.');
+        if (dotIndex != -1) {
+            return fileName.substring(dotIndex + 1).toLowerCase();
+        }
+        return ""; // Extensión desconocida
+    }
+
 
     public User getCreatedBy() {
         return createdBy;
     }
 
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public LocalDateTime getLastModifiedDate() {
-        return lastModifiedDate;
+    public void setCreatedBy(User createdBy) {
+        this.createdBy = createdBy;
     }
 
     public String getSecurityAttributes() {
         return securityAttributes;
     }
 
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public String getExtension() {
-        return extension;
-    }
-
-    public void setExtension(String extension) {
-        this.extension = extension;
-    }
-
-    public void updateLastModifiedDate() {
-        this.lastModifiedDate = LocalDateTime.now();
-    }
-
-    public void increaseSize(int amount) {
-        this.size += amount;
-    }
-
-    public void decreaseSize(int amount) {
-        this.size -= amount;
-        if (this.size < 0) {
-            this.size = 0;
-        }
-    }
-
-    public void rename(String newName) {
-        this.name = newName;
+    public void setSecurityAttributes(String securityAttributes) {
+        this.securityAttributes = securityAttributes;
     }
 }

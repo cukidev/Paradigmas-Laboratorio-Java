@@ -30,6 +30,8 @@ public class System implements FileSystem {
     private final Set<User> users; // Conjunto de usuarios
     private User currentUser = null; // Usuario que está conectado actualmente
     private Drive activeDrive;
+
+    private Folder currentFolder;
     private Directory root;
     private Directory currentDirectory;
 
@@ -49,7 +51,7 @@ public class System implements FileSystem {
         this.name = name; // nombre del sistema
         this.creationDate = LocalDate.now(); // fecha de creación
         this.drives = new ArrayList<>(); // drives
-        this.users = new HashSet<>(); //usuarios
+        this.users = new HashSet<>(); //usuario
         this.root = new Directory(null, "/");
         this.currentDirectory = root;
     }
@@ -86,6 +88,14 @@ public class System implements FileSystem {
     public List<Drive> getDrives() {
         // retorna una copia de los drives actuales
         return new ArrayList<>(this.drives);
+    }
+
+    public Directory getCurrentDirectory(){
+        return currentDirectory;
+    }
+
+    public Folder getCurrentFolder(){
+        return currentFolder;
     }
 
     /*
@@ -163,11 +173,9 @@ public class System implements FileSystem {
         User user = new User(userName);
         if (users.contains(user)) {
             java.lang.System.out.println("El nombre de usuario ya está en uso.");
-            //JOptionPane.showMessageDialog(null, "El nombre de usuario ya esta en uso.");
         } else {
             users.add(user);
-            java.lang.System.out.println("Usuario " + userName + "anadido con exito.");
-            //JOptionPane.showMessageDialog(null, "Usuario " + userName + "anadido con exito.");
+            java.lang.System.out.println("Usuario " + userName + " añadido con exito.");
         }
     }
 
@@ -261,12 +269,43 @@ public class System implements FileSystem {
             if (nextDir != null) {
                 this.currentDirectory = nextDir;
             } else {
-                java.lang.System.out.println("The directory doesn't exist");
+                java.lang.System.out.println("El directorio no existe");
             }
-        } else {
-            java.lang.System.out.println("The path is not supported");
         }
     }
+
+    public void addFile(File file) {
+        if (currentUser == null) {
+            java.lang.System.out.println("Debe iniciar sesión para realizar esta acción.");
+            return;
+        }
+        if (activeDrive == null) {
+            java.lang.System.out.println("Debe seleccionar una unidad para realizar esta acción.");
+            return;
+        }
+        String fileName = file.getFileName();
+        Folder currentFolder = getCurrentFolder();
+
+        // Buscar si ya existe un archivo con el mismo nombre
+        java.io.File existingFile = currentFolder.getFileByName(fileName);
+        if (existingFile != null) {
+            // Reemplazar el tipo y contenido del archivo existente
+            existingFile.delete();
+            existingFile.getParent();
+            java.lang.System.out.println("El archivo '" + fileName + "' ha sido reemplazado.");
+        } else {
+            // Crear un nuevo objeto de archivo y agregarlo a la carpeta actual
+            File newFile = new File(fileName, file.getCreatedBy(), file.getSecurityAttributes(), file.getContent());
+            currentFolder.addFile(newFile);
+            java.lang.System.out.println("El archivo '" + fileName + "' ha sido creado correctamente.");
+        }
+    }
+
+
+
+
+
+
 
 
 

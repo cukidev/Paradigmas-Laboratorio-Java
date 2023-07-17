@@ -2,15 +2,19 @@ package poo;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Directory extends File {
     private Directory parent;
     private Map<String, Directory> subdirectories;
+    private List<File> files;
 
     public Directory(Directory parent, String name) {
-        super(name, null, null);  // Modifica esto de acuerdo a cómo tienes definida tu clase File
+        super(name, null, null, "");
         this.parent = parent;
         this.subdirectories = new HashMap<>();
+        this.files = new ArrayList<>();
     }
 
     public Directory getParent() {
@@ -26,6 +30,6 @@ public class Directory extends File {
      * @param directory directorios
      */
     public void addSubdirectory(Directory directory) {
-        subdirectories.put(directory.getName(), directory);
+        subdirectories.put(directory.getFileName(), directory);
     }
 }

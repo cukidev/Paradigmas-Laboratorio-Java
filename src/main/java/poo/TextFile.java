@@ -3,8 +3,8 @@ package poo;
 public class TextFile extends File{
     private String content;
 
-    public TextFile(String name, User createdBy, String securityAttributes) {
-        super(name, createdBy, securityAttributes);
+    public TextFile(String name, User createdBy, String securityAttributes, String content) {
+        super(name, createdBy, securityAttributes, content);
     }
 
     // Getter y setter para el contenido
