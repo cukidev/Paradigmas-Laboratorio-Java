@@ -1,17 +1,27 @@
 package poo;
 
+/*
+==============
+= BIBLIOTECA =
+==============
+*/
+
 import java.util.Objects;
 
 /**
  * Clase que simula los Usuarios dentro de un Sistema de archivos
  * @author Paloma Zepeda Garrido
  */
-public class User {
+public class User_2107325_ZepedaGarrido {
     /*
     =============
     = ATRIBUTOS =
     =============
     */
+
+    /**
+     * Nombre de usuario
+     */
     private final String userName;
 
     /*
@@ -24,7 +34,7 @@ public class User {
      * Constructor que recibe un nombre de usuario
      * @param userName nombre de usuario
      */
-    public User(String userName) {
+    public User_2107325_ZepedaGarrido(String userName) {
         this.userName = userName;
     }
 
@@ -57,8 +67,8 @@ public class User {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        User user = (User) obj;
-        return userName.equals(user.userName);
+        User_2107325_ZepedaGarrido user2107325ZepedaGarrido = (User_2107325_ZepedaGarrido) obj;
+        return userName.equals(user2107325ZepedaGarrido.userName);
     }
 
     /**

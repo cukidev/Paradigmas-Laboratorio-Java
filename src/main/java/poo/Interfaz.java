@@ -9,10 +9,10 @@ package poo;
 import javax.swing.*;
 import java.awt.*;
 
-public class Menu {
-    private FileSystem fileSystem;
+public class Menu_2107325_ZepedaGarrido {
+    private FileSystem_2107325_ZepedaGarrido fileSystem;
 
-    public Menu() {
+    public Menu_2107325_ZepedaGarrido() {
         displayMainMenu();
     }
 
@@ -28,7 +28,7 @@ public class Menu {
 
         createFileSystemButton.addActionListener(e -> {
             String name = JOptionPane.showInputDialog(mainFrame, "Ingrese el nombre del Sistema de Archivos:");
-            fileSystem = new FileSystem(name);
+            fileSystem = new FileSystem_2107325_ZepedaGarrido(name);
             JOptionPane.showMessageDialog(mainFrame, "Sistema de archivos '" + name + "' creado exitosamente.");
         });
 
@@ -48,7 +48,7 @@ public class Menu {
             }
         });
 
-        exitButton.addActionListener(e -> System.exit(0));
+        exitButton.addActionListener(e -> System2107325ZepedaGarrido.exit(0));
 
         mainFrame.add(createFileSystemButton);
         mainFrame.add(manageDriveButton);
@@ -84,7 +84,7 @@ public class Menu {
                 StringBuilder message = new StringBuilder("Nombre del Sistema: " + fileSystem.getName() + "\n");
                 message.append("Fecha de Creación: ").append(fileSystem.getCreationDate()).append("\n");
                 message.append("Unidades:\n");
-                for (Drive drive : fileSystem.getDrives()) {
+                for (Drive_2107325_ZepedaGarrido drive : fileSystem.getDrives()) {
                     message.append("  Letra: ").append(drive.getLetter()).append(", Nombre: ").append(drive.getName()).append(", Capacidad: ").append(drive.getCapacity()).append("\n");
                 }
                 JOptionPane.showMessageDialog(driveFrame, message.toString());
