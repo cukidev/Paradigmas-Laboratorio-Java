@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d869d714-de59-4900-80a2-14ff73c02d2b" name="Changes" comment="Creación de RF9: mkdir">
-      <change afterPath="$PROJECT_DIR$/src/main/java/poo/File.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/poo/TextFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poo/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Drive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poo/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/FileSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poo/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Folder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poo/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poo/System.java" afterDir="false" />
-    </list>
+    <list default="true" id="d869d714-de59-4900-80a2-14ff73c02d2b" name="Changes" comment="Creación de RF9: mkdir" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +17,26 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LAB3" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -73,12 +83,16 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "full.screen.before.presentation.mode": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/palom/OneDrive - usach.cl/Paloma/Material U/Séptimo Semestre/Paradigmas/Lab 3",
+    "last_opened_file_path": "C:/Users/palom/OneDrive/Escritorio/LAB3-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "File.Encoding",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -93,13 +107,22 @@
       <recent name="poo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.main">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="poo.Main" />
+      <module name="LAB3.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LAB3 [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -117,12 +140,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.main" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.LAB3 [test]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
         <item itemvalue="Gradle.LAB3 [test]" />
       </list>
     </recent_temporary>
@@ -137,6 +159,7 @@
       <updated>1687055296267</updated>
       <workItem from="1688943311969" duration="324000" />
       <workItem from="1688943921722" duration="309000" />
+      <workItem from="1689639888272" duration="400000" />
     </task>
     <task id="LOCAL-00001" summary="Creación de FileSystem y el RF3.">
       <created>1687056053933</created>

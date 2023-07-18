@@ -257,7 +257,7 @@ public class Menu_2107325_ZepedaGarrido {
 
 
             default:
-                java.lang.System.out.println("Opción no válida. Por favor, escoja una opción entre 1 y .");
+                java.lang.System.out.println("Opción no válida. Por favor, escoja una opción entre 1 y 5.");
                 break;
         }
 
